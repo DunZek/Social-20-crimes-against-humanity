@@ -1,0 +1,575 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    line-height: 2;
+}
+:root{
+    --primary:#bbb;
+    --dark:#333;
+    --light:#fff;
+    --shadow:0 1px 5px rgba(104,104,104,0.8);
+    --keyFrames_delay:7s;
+    --showcase_article_padding:3rem;
+    --theme_research:khaki;
+    --theme_synthesis: rgb(171, 212, 223);
+    --theme_answer:rgb(255, 180, 158);
+    --theme_bibliography:rgb(193, 255, 100);
+    --content_btn:crimson;
+    --body:#eee;
+}
+html{
+    box-sizing:border-box;
+    color:var(--dark);
+}
+body{
+    background-color:var(--body);
+    line-height:1.4;
+}
+.showcase_btn:hover, #content .btn:hover{
+    transition: 0.5s;
+    background-color: var(--light);
+    border:var(--light) solid;
+    color:var(--dark);
+}
+/* Header */
+header{
+    position: sticky;
+    top:0;
+    height:80px;
+    z-index:1;
+    transition: 0.5s;
+    background: #44444480;
+}
+header .selected{
+    border: 1px rgb(221, 221, 221) solid;
+}
+header #header_container{
+    width:95%;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+}
+header h1{
+    color:#ddd;
+    font-size: 30px;
+    margin-top:15px;
+}
+header #header_container ul{
+    grid-column-start: -1;
+    margin-top:15px;
+    list-style: none;
+}
+header #header_container ul li{
+    display:inline-block;
+    margin:0 10px;
+    padding:0 15px;
+}
+header #header_container ul li a{
+    display:block;
+    text-decoration:none;
+    padding: 0.5em 0.2em;
+    text-align: center;
+    color:var(--primary);
+    font-size:1.1rem;
+    cursor: pointer;
+}
+header #header_container ul li a:hover{
+    color:var(--light);
+    transition: 0.35s;
+}
+/* Header JS */
+    .dark{
+        background: #333;
+    }
+/* Header END */
+/*Hamburger button START*/
+#hamburger_icon{
+    display: none;
+    cursor:pointer;
+    margin:auto;
+}
+#hamburger_icon #top,#mid,#bottom{
+    width:25px;
+    height:4px;
+    margin: 4px 0;
+    background-color: white;
+    position: relative;
+    transition: 0.3s;
+}
+.hamburgerOpen #top{
+    transform: rotate(-45deg);
+    top:8px;
+}
+.hamburgerOpen #mid{
+    opacity:0;
+}
+.hamburgerOpen #bottom{
+    transform: rotate(45deg);
+    top:-8px;
+}
+/*Hamburger button END*/
+#small_res{
+    display:none;
+    list-style: none;
+    text-align: center;
+}
+#small_res li{
+    display:inline-block;
+    margin:0 10px;
+}
+#small_res li a{
+    display:block;
+    text-decoration:none;
+    padding: 0.5em 0.2em;
+    text-align: center;
+    color:#aaa;
+    font-size:0.8rem;
+    cursor: pointer;
+}
+    #small_res li a:hover{
+        color:#fff;
+        transition: 0.35s;
+    }
+#wrapper{
+    position:relative;
+    top:-80px;
+}
+/* Showcase START */
+#showcase{
+    display:block;
+    height:100vh;
+    /* animation: showcase calc(var(--keyFrames_delay)*5) linear infinite forwards; */
+}
+#showcase h3{
+    font-size:4rem;
+    color:var(--light);
+}
+#showcase .showcase_text{
+    font-size:1.3rem;
+    color:var(--light);
+}
+/* @keyframes showcase{
+    0%{background-color: skyblue;}
+    20%{background-color: tomato;}
+    40%{background-color: yellowgreen;}
+    60%{background-color: teal;}
+    80%{background-color: violet;}
+} */
+    #showcase #showcase_welcome{
+        animation: welcome var(--keyFrames_delay) linear infinite forwards;
+        padding:var(--showcase_article_padding);
+        height:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-image: url('img/artistic-depiction-EDIT.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+        #showcase_welcome #welcome_context{
+            color:#777;
+            font-size:0.9rem;
+        }
+    #showcase #showcase_research{
+        animation: research var(--keyFrames_delay) linear infinite forwards;
+        background-image: url('img/iwane-matsui-enters-nanking-EDIT.jpg');
+    }
+    #showcase #showcase_synthesis{
+        animation: research var(--keyFrames_delay) linear infinite forwards;
+        background-image: url('img/chinese-youths-bound-EDIT.jpg');
+    }
+    #showcase #showcase_answer{
+        animation: research var(--keyFrames_delay) linear infinite forwards;
+        background-image: url('img/GIMP files/Nanjing-Massacre-Memorial-300000-victims.jpg');
+    }
+    #showcase #showcase_bibliography{
+        animation: research var(--keyFrames_delay) linear infinite forwards;
+        background-image: url('img/International_Military_Tribunal_Ichigaya_Court-EDIT.png');
+    }
+    #showcase #showcase_research, #showcase #showcase_synthesis, #showcase #showcase_answer, #showcase #showcase_bibliography{
+        padding:var(--showcase_article_padding);
+        height:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+    }
+    @keyframes welcome{
+        0%{
+            opacity:0;
+        }
+        20%{
+            opacity:100;
+        }
+        80%{
+            opacity:100;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+    @keyframes research{
+        0%{
+            opacity:0;
+        }
+        20%{
+            opacity:100;
+        }
+        80%{
+            opacity:100;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+    @keyframes synthesis{
+        0%{
+            opacity:0;
+        }
+        20%{
+            opacity:100;
+        }
+        80%{
+            opacity:100;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+    @keyframes answer{
+        0%{
+            opacity:0;
+        }
+        20%{
+            opacity:100;
+        }
+        80%{
+            opacity:100;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+    @keyframes bibliography{
+        0%{
+            opacity:0;
+        }
+        20%{
+            opacity:100;
+        }
+        80%{
+            opacity:100;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+        .showcase_btn{
+            background:none;
+            border: var(--light) solid;
+            color: var(--light);
+            padding: 0.6rem 1.3rem;
+            text-decoration: none;
+            margin-top:10px;
+            transition:0.5s;
+        }
+/* Showcase END */
+
+/* Content START */
+#content h2{
+    font-size:1.8em;
+    padding:20px;
+}
+#content .paragraph{
+    font-size:1.3rem;
+}
+#content .btn{
+    color: var(--dark);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: var(--dark) solid ;
+    margin-top:30px;
+    transition:0.5s;
+}
+    #about{
+        background:#fff;
+        width:90%;
+        margin:50px auto;
+        box-shadow: var(--shadow);
+    }
+        #about h2{
+            text-align: center;
+            font-size:2.3rem;
+        }
+        #about p{
+            padding:20px;
+        }
+        .link{
+            text-decoration: none;
+            color:rgb(167, 167, 167);
+            transition:0.5s;
+        }
+        .link:hover{
+            transition: 0.5s;
+            color:gold;
+        }
+    #actual_bibliography{
+        background:#fff;
+        width:90%;
+        margin:50px auto;
+        box-shadow: var(--shadow);
+    }
+        #actual_bibliography h2{
+        text-align: center;
+        font-size:2.3rem;
+        }
+        #actual_bibliography li{
+            font-size:1.3rem;
+            margin-left:50px;
+            padding:20px;
+        }
+
+#below_about{
+    background-image: linear-gradient(#eee, #333, #333, #333, #333, #eee);
+    padding:80px 80px;
+}
+#below_about h2{
+    margin:0 20px 0 0;
+    padding:0;
+}
+#below_about .item_1 p{
+    margin:20px 0;
+    padding:0;
+}
+img{
+    max-width:100%;
+    max-height:100%;
+}
+.item_1{
+    flex:1;
+    margin:30px;
+}
+.item_2{
+    flex:1;
+    margin:30px;
+}
+.item_2 .img_context{
+    font-size: 0.9rem;
+    margin-top:10px;
+    margin-bottom:0;
+}
+    #research{
+        background-color:var(--theme_research);
+        margin-right: 5%;
+        display: flex;
+        flex-direction: row;
+        box-shadow: var(--shadow);
+    }
+    #synthesis{
+        background-color:var(--theme_synthesis);
+        margin: 80px 0 80px 5%;
+        display: flex;
+        flex-direction: row-reverse;
+        box-shadow: var(--shadow);
+    }
+    #answer{
+        background-color:var(--theme_answer);
+        margin: 80px 5% 80px 0;
+        display: flex;
+        flex-direction: row;
+        box-shadow: var(--shadow);
+    }
+    #bibliography{
+        background-color:var(--theme_bibliography);
+        margin-left:5%;
+        display: flex;
+        flex-direction: row-reverse;
+        box-shadow: var(--shadow);
+    }
+/* Content END */
+footer{
+    position: relative;
+    top:80px;
+    background-color: #222;
+    padding:20px;
+}
+footer p{
+    text-align: center;
+    color:#fff;
+}
+
+/* Other html files */
+#content_body{
+    background-image: linear-gradient(var(--light), #333, #333, #333, var(--body));
+}
+#content_wrapper{
+    width:80%;
+    margin:auto;
+    padding:100px 0;
+}
+.btn_wrapper{
+    /* margin:20px 0; */
+    margin:45px 0;
+}
+.home_btn{
+    color: var(--content_btn);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: var(--content_btn) solid ;
+    transition:0.5s;
+}
+    .home_btn:hover{
+        transition:0.5s;
+        color:var(--light);
+        background: var(--content_btn);
+    }
+.next_btn{
+    color: var(--content_btn);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: var(--content_btn) solid ;
+    transition:0.5s;
+}
+    .next_btn:hover{
+        transition:0.5s;
+        color:var(--light);
+        background: var(--content_btn);
+    }
+h4{
+    font-size:1.5rem;
+}
+.flex_container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.img_container{
+    text-align: center;
+}
+.content li{
+    font-size:1.3rem;
+    margin-left:50px;
+    padding-left:20px;
+}
+.image_present{
+    display:block;
+}
+.item_3 .img_context_3{
+    font-size: 0.9rem;
+    margin-top:10px;
+    margin-bottom:0;
+    display:inline-block;
+}
+    /* For research.html (Motives) */
+#motives{
+    background: var(--theme_research);
+    padding:40px;
+    box-shadow: var(--shadow);
+}
+    #motives h2{
+        padding:0;
+        margin-bottom:20px;
+        text-align: center;
+    }
+#methods{
+    background: var(--theme_synthesis);
+    padding:40px;
+    box-shadow: var(--shadow);
+}
+    #methods h2{
+        padding:0;
+        margin-bottom:20px;
+        text-align: center;
+    }
+#consequences{
+    background: var(--theme_answer);
+    padding:40px;
+    box-shadow: var(--shadow);
+}
+    #consequences h2{
+        padding:0;
+        margin-bottom:20px;
+        text-align: center;
+    }
+#the_answer{
+    background: var(--theme_bibliography);
+    padding:40px;
+    box-shadow: var(--shadow);
+}
+    #the_answer h2{
+        padding:0;
+        margin-bottom:20px;
+        text-align: center;
+    }
+/* For research.html (Motives) END */
+
+/* Media Queries */
+@media(max-width:930px){
+    /* Header queries */
+    header #header_container{
+        grid-template-columns: 270px 1fr;
+    }
+    header h1{
+        font-size:24px;
+    }
+    header #header_container ul li a{
+        font-size:0.9em;
+    }
+    /* Non-header */
+    #below_about{
+        padding:0 5%;
+    }
+    #content .paragraph, #actual_bibliography li, .content li{
+        font-size:1.15rem;
+    }
+    #research,#synthesis,#answer,#bibliography{
+        margin:80px 0;
+    }
+}
+@media(max-width:760px){
+    header{
+        height:70px;
+        display:grid;
+        grid-template-columns: 1fr 50px;
+    }
+    header #header_container{
+        display:inline-block;
+        margin:auto;
+        text-align: center;
+    }
+    #header_container h1{
+        margin:0;
+        display:inline-block;
+    }
+    #hamburger_icon{
+        display: inline-block;
+    }
+    header #header_container ul{
+        transition: 0.5s;
+        display:none;
+    }
+    #showcase{
+        height:105vh;
+    }
+    #showcase h3{
+        font-size:2rem;
+    }
+    #showcase p{
+        font-size:1rem;
+    }
+
+    #research,#synthesis,#answer,#bibliography,.flex_container{
+        flex-direction: column;
+    }
+    .flex_container .item_1, .flex_container .item_2{
+        margin:20px 0;
+    }
+    .content li{
+        padding-left:0;
+    }
+}
+
